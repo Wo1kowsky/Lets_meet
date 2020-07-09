@@ -2,7 +2,7 @@ version: '2'
 
 services:
   meeting_service:
-    build: ./meeting_service
+    image: triztiz/meeting_service:latest
     command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 #    volumes:
 #      - ./meeting-service/:/app/
@@ -22,7 +22,7 @@ services:
       - POSTGRES_DB=meeting_db_dev
 
   user_service:
-    build: ./user_service
+    image: triztiz/user:latest
     command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 #    volumes:
 #      - ./user-service/:/app/
