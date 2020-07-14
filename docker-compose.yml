@@ -22,7 +22,7 @@ services:
       - POSTGRES_DB=meeting_db_dev
 
   user_service:
-    image: triztiz/user:latest
+    image: triztiz/user_service:latest
     command: uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 #    volumes:
 #      - ./user-service/:/app/
