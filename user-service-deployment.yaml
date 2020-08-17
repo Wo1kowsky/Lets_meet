@@ -34,9 +34,9 @@ spec:
         - "8000"
         env:
         - name: DATABASE_URI
-          value: postgresql://user_user:user_password@user_db/user_db_dev
+          value: postgresql://user_user:user_password@user-db:5432/user_db_dev
         - name: MEETING_SERVICE_HOST_URL
-          value: http://meeting_service:8000/api/v1/meetings/
+          value: http://meeting-service:8000/api/v1/meetings/
         image: triztiz/user_service:latest
         imagePullPolicy: ""
         name: user-service

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    kompose.cmd: kompose --file docker-compose.yml convert
+    kompose.cmd: kompose convert
     kompose.version: 1.21.0 ()
   creationTimestamp: null
   labels:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       annotations:
-        kompose.cmd: kompose --file docker-compose.yml convert
+        kompose.cmd: kompose convert
         kompose.version: 1.21.0 ()
       creationTimestamp: null
       labels:
@@ -34,10 +34,10 @@ spec:
         - "8000"
         env:
         - name: DATABASE_URI
-          value: postgresql://meeting_user:meeting_password@meeting_db/meeting_db_dev
+          value: postgresql://meeting_user:meeting_password@meeting-db:5432/meeting_db_dev
         - name: USER_SERVICE_HOST_URL
-          value: http://user_service:8000/api/v1/users/
-        image: meeting-service
+          value: http://user-service:8000/api/v1/users/
+        image: triztiz/meeting_service:latest
         imagePullPolicy: ""
         name: meeting-service
         ports:

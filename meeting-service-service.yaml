@@ -11,8 +11,8 @@ metadata:
 spec:
   ports:
   - name: "8001"
-    port: 8001
-    targetPort: 8000
+    port: 8000
+#    targetPort: 8000
   selector:
     io.kompose.service: meeting-service
 status:
